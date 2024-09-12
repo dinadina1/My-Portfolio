@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Sidebar Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "RZYwZlXyn9tBqPt4A",
+      });
+    })();
+  </script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <nav class="p-4 sticky top-0 z-10" style="background-color: black;">
+    <div class="container mx-auto flex items-center justify-between">
+      <div class="text-white text-2xl font-bold">
+        DINAKARAN
+      </div>
+
+      <!-- button for open sidebar -->
+      <div class="block md:hidden">
+        <button id="menu-button" class="text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- desktop navbar -->
+      <div class="hidden md:flex space-x-6 px-4">
+        <a href="#home" id="home-link" class="nav-link text-white font-semibold active:text-red-600">Home</a>
+        <a href="#about" id="about-link" class="nav-link text-white font-semibold active:text-red-600">About</a>
+        <a href="#skills" id="skills-link" class="nav-link text-white font-semibold active:text-red-600">Skills</a>
+        <a href="#projects" id="projects-link"
+          class="nav-link text-white font-semibold active:text-red-600">Projects</a>
+        <a href="#education" id="education-link"
+          class="nav-link text-white font-semibold active:text-red-600">Education</a>
+        <a href="#contact" id="contact-link" class="nav-link text-white font-semibold active:text-red-600">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- sidebar for mobile -->
+  <div id="sidebar"
+    class="fixed inset-y-0 right-0 z-20 w-64 bg-gray-800 text-white transform translate-x-full sidebar lg:hidden">
+    <div class="p-4 flex justify-between items-center">
+      <h2 class="text-xl font-semibold">DINAKARAN</h2>
+      <button id="close-button" class="text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-col space-y-4 p-4">
+      <a href="#home" class="nav-link text-white font-semibold">Home</a>
+      <a href="#about" class="nav-link text-white font-semibold">About</a>
+      <a href="#skills" class="nav-link text-white font-semibold">Skills</a>
+      <a href="#projects" class="nav-link text-white font-semibold">Projects</a>
+      <a href="#education" class="nav-link text-white font-semibold">Education</a>
+      <a href="#contact" class="nav-link text-white font-semibold">Contact</a>
+    </div>
+  </div>
+
+
+  <!-- Home -->
+  <section id="home" class="py-10 px-6 text-center text-white">
+    <h4 class="text-xl font-semibold my-2 text-white">Hello</h4>
+    <p class="text-6xl font-bold mb-4">I'm <span class="text-red-600">Dinakaran</span></p>
+    <!-- <p class="text-2xl mb-6 font-bold">Full Stack Web Developer</p> -->
+    <p class="text-2xl mb-6 font-bold">
+      <span id="animated-text" class="typing-container"> </span>
+    </p>
+    <div class="flex justify-center gap-4">
+      <a href="https://github.com/dinadina1" target="_blank" class="social-icon">
+        <img src="./images/github1.jpg" alt="GitHub" class="w-8 h-8 md:w-10 md:h-10 rounded-full" />
+      </a>
+      <a href="https://www.linkedin.com/in/dinakaran1/" target="_blank" class="social-icon">
+        <img src="./images/linkedin.png" alt="LinkedIn" class="w-8 h-8 md:w-10 md:h-10" />
+      </a>
+    </div>
+    <div class="flex justify-center pt-6">
+      <a href="#contact" class="bg-red-600 py-3 px-6 rounded-3xl hover:bg-red-800">HIRE ME</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-10 px-6 text-center md:text-left">
+    <div class="container mx-auto flex flex-col md:flex-row items-center gap-8">
+      <!-- Left Side: Image -->
+      <div class="flex-1">
+        <div class="lg:p-20">
+          <img src="./images/dina.png" alt="Your Photo"
+            class="w-full h-84 shadow-lg transform transition-transform duration-500 hover:scale-105 rounded-full" />
+        </div>
+      </div>
+
+      <!-- Right Side: Information -->
+      <div class="flex-1 space-y-6">
+        <h2 class="text-4xl font-bold text-white">About Me</h2>
+        <p class="text-md text-gray-400">
+          I am a passionate and skilled Full Stack Web Developer with a strong background in creating dynamic and
+          responsive web applications. My objective is to leverage my expertise in modern technologies to build
+          innovative solutions that meet user needs and drive business success.
+        </p>
+
+        <div class="text-gray-400">
+          <p class="text-white">Email: <span class="text-gray-400 ps-2">dinad9355@gmail.com</span></p>
+          <p class="text-white">Phone: <span class="text-gray-400 ps-2">(+91) 9360611728</span></p>
+          <p class="text-white">Location: <span class="text-gray-400 ps-2">Chennai, India</span></p>
+        </div>
+        <a href="https://drive.google.com/file/d/1G7ynh9ch-2_nPHyYUJgJaP9yBc35Eo1e/view?usp=drive_link" target="_blank"
+          class="inline-block bg-red-600 text-white py-3 px-7 rounded-full shadow-md hover:bg-red-800 transition duration-300 ease-in-out">
+          My Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-10 px-6 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-4xl font-bold mb-8 text-white">My Skills</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <!-- Skill Item -->
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/react.svg" alt="React" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">React</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/javascript.svg" alt="JavaScript" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">JavaScript</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/cprogramming.svg" alt="C Programming" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">C Programming</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/tailwindcss.svg" alt="Tailwind CSS" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">Tailwind CSS</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/nodejs.svg" alt="Node.js" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">Node.js</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/mongoose.svg" alt="Mongoose" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">Mongoose</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/mongodb.svg" alt="MongoDB" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">MongoDB</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/html.svg" alt="HTML" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">HTML</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/css.svg" alt="CSS" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">CSS</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/bootstrap.svg" alt="Bootstrap" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">Bootstrap</p>
+        </div>
+
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/sql.png" alt="SQL" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">SQL</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/express-js.svg" alt="Express.js" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">Express.js</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/npm.png" alt="NPM" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">NPM</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/git.svg" alt="Git" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">Git</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/rest-api.png" alt="REST API" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">REST API</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/postman.svg" alt="Postman" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">Postman</p>
+        </div>
+        <div
+          class="skill-icon p-4 bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110">
+          <img src="./images/github.svg" alt="Postman" class="w-16 h-16 mx-auto" />
+          <p class="mt-2 text-white">Github</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- projects -->
+  <section id="projects" class="py-12 px-6 text-center">
+    <h2 class="text-4xl font-bold mb-8 text-white text-center">Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:p-8">
+      <!-- Project 1: Train Ticket Booking Website -->
+      <div
+        class="group relative overflow-hidden rounded-lg shadow-lg bg-gray-200 transform hover:scale-105 transition-all duration-500">
+        <img src="./images/raileasy.png" alt="Train Ticket Booking Website" class="w-full h-48 object-cover">
+        <div class="p-4 bg-gray-200">
+          <h3 class="text-xl font-semibold">Train Ticket Booking App</h3>
+          <p class="text-gray-500">A MERN stack train booking platform with Razorpay payment integration, ticket
+            generation, and PNR tracking.</p>
+        </div>
+        <div
+          class="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <a href="https://github.com/dinadina1/RailEasy.git" target="_blank"
+            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition">Source Code</a>
+          <a href="http://3.84.31.96/" target="_blank"
+            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-500 transition">Deploy Link</a>
+        </div>
+      </div>
+
+      <!-- Project 2: MCQ Test App -->
+      <div
+        class="group relative overflow-hidden rounded-lg shadow-lg bg-gray-200 transform hover:scale-105 transition-all duration-500">
+        <img src="./images/testy.png" alt="MCQ Test App" class="w-full h-48 object-cover">
+        <div class="p-4 bg-gray-200">
+          <h3 class="text-xl font-semibold">MCQ Test App</h3>
+          <p class="text-gray-500">A dynamic MCQ testing application with admin and user functionalities for creating
+            and taking tests.</p>
+        </div>
+        <div
+          class="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <a href="https://github.com/dinadina1/Testy-Project.git" target="_blank"
+            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition">Source Code</a>
+          <a href="http://3.83.14.13/" target="_blank"
+            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-500 transition">Deploy Link</a>
+        </div>
+      </div>
+
+      <!-- Project 3: E-commerce Online Shopping -->
+      <div
+        class="group bg-gray-200 relative overflow-hidden rounded-lg shadow-lg transform hover:scale-105 transition-all duration-500">
+        <img src="./images/ecomshop.png" alt="E-commerce Online Shopping" class="w-full h-48 object-cover">
+        <div class="p-4 bg-gray-200">
+          <h3 class="text-xl font-semibold">E-commerce Online Shopping</h3>
+          <p class="text-gray-500">An online shopping platform with product search, filtering, Stripe payments, and
+            admin dashboard.</p>
+        </div>
+        <div
+          class="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <a href="https://github.com/dinadina1/Ecom-Shop.git" target="_blank"
+            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition">Source Code</a>
+          <a href="http://3.87.50.31/" target="_blank"
+            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-500 transition">Deploy Link</a>
+        </div>
+      </div>
+
+      <!-- Project 4: Inventory Management System -->
+      <div
+        class="group relative overflow-hidden rounded-lg shadow-lg bg-gray-200 transform hover:scale-105 transition-all duration-500">
+        <img src="./images/inventory.png" alt="Inventory Management System" class="w-full h-48 object-cover">
+        <div class="p-4 bg-gray-200">
+          <h3 class="text-xl font-semibold">Inventory Management System</h3>
+          <p class="text-gray-500">A system for managing purchases, invoices, and reports, with user authentication and
+            role-based access control.</p>
+        </div>
+        <div
+          class="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <a href="https://github.com/dinadina1/Inventory-Management-System-FrontEnd.git" target="_blank"
+            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition">Source Code</a>
+          <a href="https://inventorymangement.netlify.app/" target="_blank"
+            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-500 transition">Deploy Link</a>
+        </div>
+      </div>
+
+      <!-- Project 5: URL Shortener -->
+      <div
+        class="group relative overflow-hidden rounded-lg shadow-lg bg-gray-200 transform hover:scale-105 transition-all duration-500">
+        <img src="./images/urlshortner.png" alt="URL Shortener" class="w-full h-48 object-cover">
+        <div class="p-4 bg-gray-200">
+          <h3 class="text-xl font-semibold">URL Shortener</h3>
+          <p class="text-gray-500">A simple tool for creating shortened URLs with analytics tracking for each shortened
+            link.</p>
+        </div>
+        <div
+          class="absolute inset-0 bg-black bg-opacity-75 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <a href="https://github.com/dinadina1/URLShortener-FrontEnd.git" target="_blank"
+            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition">Source Code</a>
+          <a href="https://urlshortners.netlify.app/" target="_blank"
+            class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-500 transition">Deploy Link</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="py-12 bg-black text-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-semibold mb-8 text-white">Education & Certifications</h2>
+
+      <!-- Education Section -->
+      <div class="space-y-8">
+        <!-- Degree 1 -->
+        <div
+          class="group relative bg-gray-800 mx-2 md:mx-10 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+          <h3 class="text-2xl font-bold text-white">Bachelor of Computer Applications (BCA)</h3>
+          <p class="text-gray-400 mt-2">Indo American College, Cheyyar (2019 - 2022)</p>
+          <p class="text-gray-400 mt-2">CGPA : 8.5</p>
+        </div>
+
+        <!-- Certification Section -->
+        <h3 class="text-2xl font-bold mt-12 text-white">Certifications</h3>
+        <div class="container mx-auto">
+          <div class="flex justify-center flex-wrap gap-6 mt-6 ">
+            <!-- Certification 1 -->
+            <div
+              class="group relative bg-gray-800 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+              <h4 class="text-xl font-semibold text-white">MERN Stack Development</h4>
+              <p class="text-gray-400 mt-2">GUVI</p>
+              <p class="text-gray-400 mt-2">January 2024 - March 2024</p>
+              <div
+                class="absolute inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <a href="https://www.guvi.in/certificate?id=918y4613J51T7v18Cw&download=true" target="_blank"
+                  class="bg-red-600 text-white px-3 py-1 rounded-full hover:bg-red-700 transition transform hover:scale-110">View
+                  Certification</a>
+              </div>
+            </div>
+
+            <!-- Certification 2 -->
+            <div
+              class="group relative bg-gray-800 p-6 rounded-lg shadow-lg transform transition duration-500 hover:scale-105">
+              <h4 class="text-xl font-semibold text-white">C & C++ Programming</h4>
+              <p class="text-gray-400 mt-2">Institute of United Computers</p>
+              <p class="text-gray-400 mt-2">August 2022 - January 2023</p>
+              <div
+                class="absolute inset-0 bg-black bg-opacity-80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+
+                <a href="https://drive.google.com/file/d/197VfmJzajdvipEekhvuGjygjWIXf_7zA/view?usp=sharing"
+                  target="_blank"
+                  class="bg-red-600 text-white px-3 py-1 rounded-full hover:bg-red-700 transition transform hover:scale-110">View
+                  Certification</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-gray-900 text-white py-12 px-2 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-8">Contact Us</h2>
+
+      <form id="contactForm" class="bg-gray-800 p-2 md:p-8 rounded-lg shadow-lg" onsubmit="sendEnquiry(event)">
+        <!-- Name Field -->
+        <div class="mb-6">
+          <label for="name" class="block text-lg font-semibold mb-2">Your Name</label>
+          <input type="text" id="name" name="name"
+            class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+            placeholder="Enter your name" required>
+        </div>
+
+        <!-- Email Field -->
+        <div class="mb-6">
+          <label for="email" class="block text-lg font-semibold mb-2">Your Email</label>
+          <input type="email" id="email" name="email"
+            class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+            placeholder="Enter your email" required>
+        </div>
+
+        <!-- Message Field -->
+        <div class="mb-6">
+          <label for="message" class="block text-lg font-semibold mb-2">Your Message</label>
+          <textarea id="message" name="message" rows="6"
+            class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+            placeholder="Enter your message" required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button type="submit" onclick="sendEnquiry()"
+            class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded-lg transition transform hover:scale-105">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row justify-between items-center">
+        <!-- Footer Logo and Description -->
+        <div class="mb-6 lg:mb-0">
+          <h1 class="text-2xl font-bold">Services</h1>
+          <p class="mt-2 text-gray-400">Providing quality services and products to make your life easier.</p>
+        </div>
+
+        <!-- Footer Navigation Links -->
+        <div class="flex flex-col lg:flex-row lg:space-x-8 mb-6 lg:mb-0">
+          <div class="mb-4 lg:mb-0">
+            <h2 class="text-lg font-semibold">Quick Links</h2>
+            <ul class="mt-2 space-y-2">
+              <li><a href="#home" class="hover:text-gray-400 transition">Home</a></li>
+              <li><a href="#about" class="hover:text-gray-400 transition">About</a></li>
+              <li><a href="#skills" class="hover:text-gray-400 transition">Skills</a></li>
+              <li><a href="#projects" class="hover:text-gray-400 transition">Projects</a></li>
+              <li><a href="#education" class="hover:text-gray-400 transition">Education</a></li>
+              <li><a href="#contact" class="hover:text-gray-400 transition">Contact</a></li>
+            </ul>
+          </div>
+          <div class="mb-4 lg:mb-0">
+            <h2 class="text-lg font-semibold">Contact Us</h2>
+            <ul class="mt-2 space-y-2">
+              <li><a href="mailto:info@example.com" class="hover:text-gray-400 transition">dinad9355@gmail.com</a></li>
+              <li><a href="tel:+1234567890" class="hover:text-gray-400 transition">+91 9360611728</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Social Media Icons -->
+      <div class="flex justify-center gap-4">
+        <a href="https://github.com/dinadina1" target="_blank" class="social-icon">
+          <img src="./images/github1.jpg" alt="GitHub" class="w-8 h-8 md:w-10 md:h-10 rounded-full" />
+        </a>
+        <a href="https://www.linkedin.com/in/dinakaran1/" target="_blank" class="social-icon">
+          <img src="./images/linkedin.png" alt="LinkedIn" class="w-8 h-8 md:w-10 md:h-10" />
+        </a>
+      </div>
+
+      <!-- Copyright Statement -->
+      <div class="text-center mt-8 text-gray-400">
+        <p>&copy; 2024 Dinakaran. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <div id="overlay" class="overlay"></div>
+
+  <script>
+
+    // Visible navlink while scroll
+    document.addEventListener('DOMContentLoaded', function () {
+      const sections = document.querySelectorAll('section'); // Get all sections
+      const navLinks = document.querySelectorAll('.nav-link'); // Get all nav links
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const navLink = document.querySelector(`a[href="#${entry.target.id}"]`);
+
+          if (entry.isIntersecting) {
+            // Section is in view, change the link color
+            navLink.classList.add('text-red-600', 'nav');
+            navLink.classList.remove('text-white');
+          } else {
+            // Section is out of view, revert the link color
+            navLink.classList.remove('text-red-600', 'nav');
+            navLink.classList.add('text-white');
+          }
+        });
+      }, {
+        threshold: 0.5  // Adjust threshold to trigger when 50% of the section is in view
+      });
+
+      // Observe each section
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+
+    const menuButton = document.getElementById('menu-button');
+    const closeButton = document.getElementById('close-button');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    function openSidebar() {
+      sidebar.classList.add('open');
+      overlay.classList.add('visible');
+    }
+
+    function closeSidebar() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('visible');
+    }
+
+    menuButton.addEventListener('click', openSidebar);
+    closeButton.addEventListener('click', closeSidebar);
+    overlay.addEventListener('click', closeSidebar);
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function () {
+        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+        this.classList.add('active');
+        closeSidebar(); // Close sidebar on link click
+      });
+    });
+
+    // typing animation
+    const texts = ["Full Stack Web Developer", "MERN Stack Developer"];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isTyping = true;
+    let currentText = "";
+    const typingSpeed = 100; // Typing speed in milliseconds
+    const erasingSpeed = 50; // Erasing speed in milliseconds
+    const pauseDuration = 1000; // Pause duration between texts
+
+    function typeText() {
+      if (charIndex < texts[textIndex].length) {
+        if (isTyping) {
+          currentText += texts[textIndex][charIndex];
+          charIndex++;
+          document.getElementById('animated-text').textContent = currentText;
+        }
+        setTimeout(typeText, typingSpeed);
+      } else {
+        setTimeout(() => {
+          isTyping = false;
+          setTimeout(eraseText, pauseDuration);
+        }, pauseDuration);
+      }
+    }
+
+    function eraseText() {
+      if (charIndex > 0) {
+        if (!isTyping) {
+          currentText = currentText.slice(0, -1);
+          charIndex--;
+          document.getElementById('animated-text').textContent = currentText;
+        }
+        setTimeout(eraseText, erasingSpeed);
+      } else {
+        isTyping = true;
+        textIndex = (textIndex + 1) % texts.length;
+        setTimeout(typeText, typingSpeed);
+      }
+    }
+
+    typeText(); // Start typing animation
+
+    // function to send email
+    function sendEnquiry(event) {
+      event.preventDefault();
+
+      // Extract form data
+      const form = document.getElementById('contactForm');
+      const formData = new FormData(form);
+
+      // Extract individual values if needed
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const message = formData.get('message');
+
+      // Prepare the email data
+      const emailParams = {
+        from_name: name,
+        email_id: email,
+        message: message
+      };
+
+      // Send email using EmailJS
+      emailjs.send("service_b53t2sd", "template_if8dvxa", emailParams)
+        .then(function (response) {
+          alert("Your message was successfully sent!");
+          // Optionally reset the form here
+          form.reset();
+        }, function (error) {
+          alert("Failed to send message, please try again later.");
+        });
+    }
+
+
+
+  </script>
+</body>
+</html>
